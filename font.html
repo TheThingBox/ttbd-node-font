@@ -1,0 +1,101 @@
+<script type="text/x-red" data-template-name="tsa_font">
+  <div class="form-row">
+    <label for="node-input-font"><i class="icon-tag"></i>Font</label>
+    <select id="node-input-font"></select>
+  </div>
+  <div class="form-row">
+    <label for="node-input-font_type"><i class="icon-tag"></i>Type</label>
+    <select id="node-input-font_type"></select>
+    <input type="hidden" id="node-input-font_name">
+  </div>
+</script>
+<script type="text/x-red" data-help-name="tsa_font">
+  <p>Sets a font information on the flow.</p>
+  <h2>Advanced</h2>
+  <p>Informations are returned by the node in the <code>msg.<b>font</b></code> property.</p>
+</script>
+<script type="text/javascript">
+RED.nodes.registerType("tsa_font", {
+  category: "ledmatrix",
+  defaults: {
+    font: {
+      value: ""
+    },
+    font_type: {
+      value: ""
+    },
+    font_name: {
+      value: ""
+    }
+  },
+  color: "#FFF",
+  icon: "tsa_font.png",
+  paletteLabel: "Font",
+  inputs: 1,
+  outputs: 1,
+  label: function() {
+    return (this.font) ? (this.font + ((this.font_name != "" && this.font_name != "Classic") ? (" " + this.font_name) : "")) : "font";
+  },
+  labelStyle: function() {
+    return this.name ? "node_label_italic" : "";
+  },
+  oneditprepare: function() {
+    var that = this;
+    var typeByFont = {};
+
+    var SFont = that.font;
+    var SFontType = that.font_type;
+
+    $('#node-input-font').empty();
+    $('#node-input-font_type').empty();
+
+    function changeTypeOption() {
+      $('#node-input-font_type').empty();
+      if (typeByFont.hasOwnProperty(that.font)) {
+        for (var type in typeByFont[that.font]) {
+          $('#node-input-font_type').append($('<option></option>').val(typeByFont[that.font][type]).html(type));
+        }
+          if (SFontType != null) {
+            $("#node-input-font_type").val(SFontType);
+            SFontType = null;
+          }
+        that.font_type = $("#node-input-font_type").val();
+        $("#node-input-font_name").val($("#node-input-font_type :selected").text());
+        that.font_name = $("#node-input-font_name").val();
+      }
+    }
+
+    $.ajax({
+      url: "font/list",
+      method: "GET",
+      dataType: 'json',
+      success: function(data) {
+        if (data.err) {
+          return;
+        }
+        typeByFont = data.fonts;
+        for (var font in typeByFont) {
+          $('#node-input-font').append($('<option></option>').val(font).html(font));
+        }
+        if (typeByFont.hasOwnProperty(SFont)) {
+            $("#node-input-font").val(SFont);
+            SFont = null;
+        }
+        that.font = $("#node-input-font").val();
+        changeTypeOption();
+      }
+    });
+
+    $("#node-input-font").change(function() {
+        that.font = $("#node-input-font").val();
+      changeTypeOption();
+    });
+
+    $("#node-input-font_type").change(function() {
+      that.font_type = $("#node-input-font_type").val();
+      $("#node-input-font_name").val($("#node-input-font_type :selected").text());
+      that.font_name = $("#node-input-font_name").val();
+    });
+  }
+});
+</script>

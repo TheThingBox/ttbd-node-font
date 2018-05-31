@@ -1,0 +1,10 @@
+{
+  "name": "tsa_font",
+  "version": "1.0.0",
+  "description": "This node sets a font",
+  "node-red": {
+    "nodes": {
+      "tsa_font": "font.js"
+    }
+  }
+}
