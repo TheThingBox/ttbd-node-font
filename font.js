@@ -38,6 +38,6 @@ module.exports = function(RED) {
         "Classic": "-C",
       }
     }
-    res.json(200, { fonts: fonts });
+    res.status(200).json({ fonts: fonts });
   })
 }
