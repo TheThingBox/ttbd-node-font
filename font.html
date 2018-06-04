@@ -52,7 +52,7 @@ RED.nodes.registerType("tsa_font", {
       selectFontType.empty();
       let selectedFont = fonts.filter(function(d){ return d.font.value === selectFont.val()})
       if (selectedFont.length > 0) {
-        selectFontType.children().last().after(selectedFont[0].types.map(function(d) {
+        selectFontType.html(selectedFont[0].types.map(function(d) {
           return $('<option></option>').attr('value', d.value).attr('selected', SFontType === d.value).text(d.name).wrap('<p/>').parent().html();
         }).join(""));
         SFontType = null;
@@ -62,7 +62,7 @@ RED.nodes.registerType("tsa_font", {
 
     $.getJSON("font/list", function(data) {
       fonts = data.fonts;
-      selectFont.children().last().after(fonts.map(function(d) {
+      selectFont.html(fonts.map(function(d) {
         return $('<option></option>').attr('value', d.font.value).attr('selected', SFont === d.font.value).text(d.font.name).wrap('<p/>').parent().html();
       }).join(""));
       SFont = null;
