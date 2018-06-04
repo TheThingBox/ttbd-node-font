@@ -15,29 +15,53 @@ module.exports = function(RED) {
   RED.nodes.registerType("tsa_font", tsa_font);
 
   RED.httpAdmin.get("/font/list", function(req, res) {
-    var fonts = {
-      "arial": {
-        "Classic": "",
-        "Bold": "bd",
-        "Italic": "i",
-        "Bold italic": "bi"
+    var fonts = [
+      {
+        "font": {
+          "name": "Arial",
+          "value": 'arial'
+        }
+        "types": [
+          { "name": "Classic", "value": "" },
+          { "name": "Bold", "value": "bd" },
+          { "name": "Italic", "value": "i" },
+          { "name": "Bold italic", "value": "bi" }
+        ]
       },
-      "Roboto": {
-        "Classic": "-Regular",
-        "Bold": "-Bold",
-        "Italic": "-Italic",
-        "Light": "-Light"
+      {
+        "font": {
+          "name": "Roboto",
+          "value": 'Roboto'
+        }
+        "types": [
+          { "name": "Classic", "value": "-Regular" },
+          { "name": "Bold", "value": "-Bold" },
+          { "name": "Italic", "value": "-Italic" },
+          { "name": "Light", "value": "-Light" }
+        ]
       },
-      "times": {
-        "Classic": "",
-        "Bold": "bd",
-        "Italic": "i",
-        "Bold italic": "bi"
+      {
+        "font": {
+          "name": "Times",
+          "value": 'times'
+        }
+        "types": [
+          { "name": "Classic", "value": "" },
+          { "name": "Bold", "value": "bd" },
+          { "name": "Italic", "value": "i" },
+          { "name": "Bold italic", "value": "bi" }
+        ]
       },
-      "Ubuntu": {
-        "Classic": "-C",
+      {
+        "font": {
+          "name": "Ubuntu",
+          "value": 'Ubuntu'
+        }
+        "types": [
+          { "name": "Classic", "value": "-C" }
+        ]
       }
-    }
+    ]
     res.status(200).json({ fonts: fonts });
   })
 }
