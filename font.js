@@ -28,7 +28,7 @@ module.exports = function(RED) {
         "Italic": "-Italic",
         "Light": "-Light"
       },
-      "Times": {
+      "times": {
         "Classic": "",
         "Bold": "bd",
         "Italic": "i",
