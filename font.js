@@ -20,7 +20,7 @@ module.exports = function(RED) {
         "font": {
           "name": "Arial",
           "value": 'arial'
-        }
+        },
         "types": [
           { "name": "Classic", "value": "" },
           { "name": "Bold", "value": "bd" },
@@ -32,7 +32,7 @@ module.exports = function(RED) {
         "font": {
           "name": "Roboto",
           "value": 'Roboto'
-        }
+        },
         "types": [
           { "name": "Classic", "value": "-Regular" },
           { "name": "Bold", "value": "-Bold" },
@@ -44,7 +44,7 @@ module.exports = function(RED) {
         "font": {
           "name": "Times",
           "value": 'times'
-        }
+        },
         "types": [
           { "name": "Classic", "value": "" },
           { "name": "Bold", "value": "bd" },
@@ -56,7 +56,7 @@ module.exports = function(RED) {
         "font": {
           "name": "Ubuntu",
           "value": 'Ubuntu'
-        }
+        },
         "types": [
           { "name": "Classic", "value": "-C" }
         ]
