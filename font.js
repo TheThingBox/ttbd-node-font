@@ -60,6 +60,15 @@ module.exports = function(RED) {
         "types": [
           { "name": "Classic", "value": "-C" }
         ]
+      },
+      {
+        "font": {
+          "name": "Aldrich",
+          "value": 'Aldrich'
+        },
+        "types": [
+          { "name": "Classic", "value": "-Regular" }
+        ]
       }
     ]
     res.status(200).json({ fonts: fonts });
