@@ -1,0 +1,91 @@
+[
+  {
+    "font": {
+      "name": "Arial",
+      "value": "arial"
+    },
+    "types": [
+      { "name": "Classic", "value": "" },
+      { "name": "Bold", "value": "bd" },
+      { "name": "Italic", "value": "i" },
+      { "name": "Bold italic", "value": "bi" }
+    ],
+    "sizes": [
+      { "size": "8", "offset": 2},
+      { "size": "10", "offset": 1},
+      { "size": "12", "offset": -1},
+      { "size": "14", "offset": -3},
+      { "size": "16", "offset": -4}
+    ]
+  },
+  {
+    "font": {
+      "name": "Roboto",
+      "value": "Roboto"
+    },
+    "types": [
+      { "name": "Classic", "value": "-Regular" },
+      { "name": "Bold", "value": "-Bold" },
+      { "name": "Italic", "value": "-Italic" },
+      { "name": "Light", "value": "-Light" }
+    ],
+    "sizes": [
+      { "size": "8", "offset": 2},
+      { "size": "10", "offset": -1},
+      { "size": "12", "offset": -2},
+      { "size": "14", "offset": -4},
+      { "size": "16", "offset": -5}
+    ]
+  },
+  {
+    "font": {
+      "name": "Times",
+      "value": "times"
+    },
+    "types": [
+      { "name": "Classic", "value": "" },
+      { "name": "Bold", "value": "bd" },
+      { "name": "Italic", "value": "i" },
+      { "name": "Bold italic", "value": "bi" }
+    ],
+    "sizes": [
+      { "size": "8", "offset": 1},
+      { "size": "10", "offset": 0},
+      { "size": "12", "offset": -2},
+      { "size": "14", "offset": -4},
+      { "size": "16", "offset": -5}
+    ]
+  },
+  {
+    "font": {
+      "name": "Ubuntu",
+      "value": "Ubuntu"
+    },
+    "types": [
+      { "name": "Classic", "value": "-C" }
+    ],
+    "sizes": [
+      { "size": "8", "offset": 2},
+      { "size": "10", "offset": 0},
+      { "size": "12", "offset": -1},
+      { "size": "14", "offset": -3},
+      { "size": "16", "offset": -4}
+    ]
+  },
+  {
+    "font": {
+      "name": "Aldrich",
+      "value": "Aldrich"
+    },
+    "types": [
+      { "name": "Classic", "value": "-Regular" }
+    ],
+    "sizes": [
+      { "size": "8", "offset": 3},
+      { "size": "10", "offset": 2},
+      { "size": "12", "offset": 0},
+      { "size": "14", "offset": -1},
+      { "size": "16", "offset": -2}
+    ]
+  }
+]

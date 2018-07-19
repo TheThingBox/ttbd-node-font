@@ -1,7 +1,8 @@
 {
   "name": "ttbd-node-text-font",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This node sets a font",
+  "fontsLib": "fonts",
   "node-red": {
     "nodes": {
       "tsa_font": "font.js"
